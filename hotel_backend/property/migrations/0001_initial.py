@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=255)),
                 ('description', models.TextField()),
                 ('price_per_night', models.IntegerField()),
-                ('bedrooms', models.IntegerField()),
+                ('bedrooms', models.IntegerField(default=1)),
                 ('guests', models.CharField(max_length=255)),
                 ('country', models.CharField(max_length=255)),
                 ('country_code', models.CharField(max_length=10)),
