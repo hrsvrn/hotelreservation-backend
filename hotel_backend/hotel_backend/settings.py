@@ -33,6 +33,11 @@ AUTH_USER_MODEL='useraccount.User'
 
 SITE_ID=1
 WEBSITE_URL="http://localhost:8000"
+CHANNEL_LAYERS={
+    'default':{
+        'BACKEND':'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 SIMPLE_JWT={
     "ACESS_TOKEN_LIFETIME":timedelta(minutes=60),
@@ -69,6 +74,7 @@ REST_AUTH={
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -91,6 +97,7 @@ INSTALLED_APPS = [
 
     'useraccount',
     'property',
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +131,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'hotel_backend.wsgi.application'
+ASGI_APPLICATION = 'hotel_backend.asgi.application'
 
 
 # Database
